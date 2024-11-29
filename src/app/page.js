@@ -18,6 +18,7 @@ export default function Home() {
             <IoMdMenu color="#000" size={45} />
           </li>
         </ul>
+        <h1 className="text-3xl font-bold font-Inter">Whereas recognition of the inherent dignity</h1>
       </Container>
     </BackgroundHero>
     <footer>

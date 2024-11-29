@@ -10,11 +10,10 @@ module.exports = {
       backgroundImage: {
         'hero-mobile': "url('/img/bg_mobile.png')"
       },
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
     },
+    fontFamily: {
+      'Inter': ['Inter', 'sans-serif']
+    }
   },
   plugins: [],
 };
