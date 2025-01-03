@@ -1,29 +1,21 @@
+import ListData from "@/components/ListData";
 
-import { BackgroundHero, Container } from "@/components";
-import Image from "next/image";
-import { IoMdMenu } from "react-icons/io";
-
-export default function Home() {
+export default async function Home() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const dataPost = await res.json() 
   return (
-   <>
-    <BackgroundHero>
-      <Container>
-        <div className="h-[1.5rem] w-full"></div>
-        <ul className="flex justify-between items-center">
-          <li>
-            <Image src='/img/Logo2.png' width={170} height={50} alt="landify icon"/>
-          </li>
-          
-          <li>
-            <IoMdMenu color="#000" size={45} />
-          </li>
-        </ul>
-        <h1 className="text-3xl font-bold font-Inter">Whereas recognition of the inherent dignity</h1>
-      </Container>
-    </BackgroundHero>
-    <footer>
-
-    </footer>
-   </>
+   <div className="max-w-[600px] mx-auto mt-5">
+    <h1 className="text-4xl">Home</h1>
+    <p className="mt-5">data dari API secara server Component: </p>
+    <div className="border mt-3">
+    {
+      <ul className="list-decimal list-inside">
+        {dataPost.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    }
+    </div>
+   </div>
   );
 }
